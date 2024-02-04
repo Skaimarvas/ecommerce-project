@@ -9,10 +9,12 @@ import {
 //Reducers
 import { globalReducer } from "./reducers/globalReducer";
 import { productReducer } from "./reducers/productReducer";
+import { shoppingCartReducer } from "./reducers/shoppingCartReducer";
 
 const reducers = combineReducers({
   global: globalReducer,
   product: productReducer,
+  shopping: shoppingCartReducer,
 });
 
 export const store = createStore(reducers, applyMiddleware(logger, thunk));
