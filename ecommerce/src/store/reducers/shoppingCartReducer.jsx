@@ -3,6 +3,7 @@ import {
   CHECKED_PRODUCT,
   DECREASE_PRODUCT_FROM_CART,
   DELETE_PRODUCT_FROM_CART,
+  GET_ADDRESS,
   INCREASE_PRODUCT_FROM_CART,
 } from "../actions/shoppingCartActions";
 
@@ -83,6 +84,12 @@ export const shoppingCartReducer = (state = initialState, action) => {
       } else {
         return { ...state };
       }
+    case GET_ADDRESS:
+      const address = {
+        ...state,
+        addresses: [...state.addresses, ...action.payload],
+      };
+      return address;
     default:
       return state;
   }
