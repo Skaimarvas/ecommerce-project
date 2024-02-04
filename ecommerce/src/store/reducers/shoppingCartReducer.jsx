@@ -1,5 +1,6 @@
 import {
   ADD_PRODUCT_TO_CART,
+  DECREASE_PRODUCT_FROM_CART,
   DELETE_PRODUCT_FROM_CART,
 } from "../actions/shoppingCartActions";
 
@@ -38,6 +39,22 @@ export const shoppingCartReducer = (state = initialState, action) => {
         ...state,
         cart: [...deletedProduct],
       };
+    case DECREASE_PRODUCT_FROM_CART:
+      const decreasedProduct = state.cart.findIndex(
+        (item) => item.product.id === action.payload
+      );
+
+      if (decreasedProduct !== -1) {
+        const updatedCart = [...state.cart];
+        if (updatedCart[decreasedProduct].count > 1) {
+          updatedCart[decreasedProduct].count -= 1;
+        }
+        return {
+          ...state,
+          cart: updatedCart,
+        };
+      }
+      break;
     default:
       return state;
   }
