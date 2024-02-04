@@ -5,6 +5,7 @@ import {
   DELETE_PRODUCT_FROM_CART,
   GET_ADDRESS,
   INCREASE_PRODUCT_FROM_CART,
+  POST_ADDRESS,
 } from "../actions/shoppingCartActions";
 
 const initialState = {
@@ -90,6 +91,13 @@ export const shoppingCartReducer = (state = initialState, action) => {
         addresses: [...state.addresses, ...action.payload],
       };
       return address;
+    case POST_ADDRESS:
+      const postaddress = {
+        ...state,
+        addresses: [...state.addresses, { ...action.payload }],
+      };
+      return postaddress;
+
     default:
       return state;
   }
