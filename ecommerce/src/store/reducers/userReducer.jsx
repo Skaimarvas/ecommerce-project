@@ -5,6 +5,7 @@ import {
   POST_LOGIN_DATA_TO_API,
   POST_SIGNUP_DATA_TO_API,
   SET_USER_FETCH_STATE,
+  VERIFY_TOKEN,
 } from "../actions/userActions";
 
 const initialState = {
@@ -45,6 +46,12 @@ export const userReducer = (state = initialState, action) => {
         userfetchstate: action.payload,
       };
       return userFetch;
+    case VERIFY_TOKEN:
+      const verifyUser = {
+        ...state,
+        user: action.payload,
+      };
+      return verifyUser;
     default:
       return state;
   }
