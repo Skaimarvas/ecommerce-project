@@ -3,6 +3,7 @@ import {
   postOrdersData,
   getOrdersData,
   getAddressData,
+  postAddressData,
 } from "../actions/shoppingCartActions";
 
 export const postOrders = (orders) => {
@@ -27,5 +28,15 @@ export const getAddress = () => {
       .get("/user/address")
       .then((res) => dispatch(getAddressData(res.data)))
       .catch((err) => console.log("ERROR OCCURED WHEN GETTING ADDRESS"));
+  };
+};
+export const postAddress = (address) => {
+  return (dispatch, getState) => {
+    axiosInstance
+      .post("/user/address", address)
+      .then((res) => {
+        dispatch(postAddressData(res.data["0"]));
+      })
+      .catch((err) => console.log("POST DATA", err));
   };
 };
