@@ -5,6 +5,7 @@ import {
   GET_TOTAL_PRODUCTS_COUNT,
   GET_PRODUCT_DETAIL,
   SET_DETAIL_STATE,
+  SET_PRODUCT_FETCH_STATE,
 } from "../actions/productActions";
 
 const initalState = {
@@ -51,6 +52,12 @@ export const productReducer = (state = initalState, action) => {
         detailstate: action.payload,
       };
       return fetchdetail;
+    case SET_PRODUCT_FETCH_STATE:
+      const fetch = {
+        ...state,
+        fetchstate: action.payload,
+      };
+      return fetch;
     default:
       return state;
   }
