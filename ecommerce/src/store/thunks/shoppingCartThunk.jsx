@@ -1,5 +1,9 @@
 import { axiosInstance } from "../../api/api";
-import { postOrdersData, getOrdersData } from "../actions/shoppingCartActions";
+import {
+  postOrdersData,
+  getOrdersData,
+  getAddressData,
+} from "../actions/shoppingCartActions";
 
 export const postOrders = (orders) => {
   return (dispatch, getState) => {
@@ -15,5 +19,13 @@ export const getOrders = () => {
       .get("/order")
       .then((res) => dispatch(getOrdersData(res.data)))
       .catch((err) => console.log("ERROR"));
+  };
+};
+export const getAddress = () => {
+  return (dispatch, getState) => {
+    axiosInstance
+      .get("/user/address")
+      .then((res) => dispatch(getAddressData(res.data)))
+      .catch((err) => console.log("ERROR OCCURED WHEN GETTING ADDRESS"));
   };
 };
