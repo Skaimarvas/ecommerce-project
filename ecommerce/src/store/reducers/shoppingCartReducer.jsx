@@ -20,6 +20,11 @@ const initialState = {
   orders: [],
 };
 
+/**Notlar:
+ * Postorders işlemine gerek var mı?
+ *
+ */
+
 export const shoppingCartReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_PRODUCT_TO_CART:
