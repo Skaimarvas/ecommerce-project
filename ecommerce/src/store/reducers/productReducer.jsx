@@ -1,6 +1,5 @@
 import { FETCH_STATES } from "../actions/globalActions";
-
-FETCH_STATES;
+import { GET_BESTS_FROM_API } from "../actions/globalActions";
 
 const initalState = {
   productlist: [],
@@ -16,6 +15,12 @@ const initalState = {
 
 export const productReducer = (state = initalState, action) => {
   switch (action.type) {
+    case GET_BESTS_FROM_API:
+      const bestproduct = {
+        ...state,
+        bproductlist: action.payload,
+      };
+      return bestproduct;
     default:
       return state;
   }
