@@ -2,6 +2,7 @@ import { toast } from "react-toastify";
 import { FETCH_STATES } from "../actions/globalActions";
 import {
   GET_USER_ADDRESS,
+  GET_USER_PAYMENT,
   LOGOUT_USER,
   POST_LOGIN_DATA_TO_API,
   POST_SIGNUP_DATA_TO_API,
@@ -59,6 +60,12 @@ export const userReducer = (state = initialState, action) => {
         address: action.payload,
       };
       return getUserAdress;
+    case GET_USER_PAYMENT:
+      const getUserPayment = {
+        ...state,
+        payment: action.payload,
+      };
+      return getUserPayment;
     default:
       return state;
   }
