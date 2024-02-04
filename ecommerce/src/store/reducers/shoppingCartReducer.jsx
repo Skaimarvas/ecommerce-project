@@ -7,6 +7,7 @@ import {
   GET_PAYMENT,
   INCREASE_PRODUCT_FROM_CART,
   POST_ADDRESS,
+  POST_PAYMENT,
 } from "../actions/shoppingCartActions";
 
 const initialState = {
@@ -104,7 +105,12 @@ export const shoppingCartReducer = (state = initialState, action) => {
         payments: [...state.payments, ...action.payload],
       };
       return getpayment;
-
+    case POST_PAYMENT:
+      const postpayment = {
+        ...state,
+        payments: [...state.payments, { ...action.payload }],
+      };
+      return postpayment;
     default:
       return state;
   }
