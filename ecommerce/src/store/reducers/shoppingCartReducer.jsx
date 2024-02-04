@@ -4,6 +4,7 @@ import {
   DECREASE_PRODUCT_FROM_CART,
   DELETE_PRODUCT_FROM_CART,
   GET_ADDRESS,
+  GET_ORDERS,
   GET_PAYMENT,
   INCREASE_PRODUCT_FROM_CART,
   POST_ADDRESS,
@@ -118,6 +119,12 @@ export const shoppingCartReducer = (state = initialState, action) => {
         orders: [...state.orders, action.payload],
       };
       return postOrders;
+    case GET_ORDERS:
+      const getorders = {
+        ...state,
+        orders: action.payload,
+      };
+      return getorders;
     default:
       return state;
   }
