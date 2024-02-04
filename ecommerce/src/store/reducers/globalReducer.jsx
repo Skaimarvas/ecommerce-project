@@ -2,6 +2,7 @@ import {
   FETCH_STATES,
   GET_CATEGORIES_FROM_API,
   GET_ROLES_FROM_API,
+  SET_CATEGORIES_FETCH_STATE,
 } from "../actions/globalActions";
 
 const initialState = {
@@ -26,7 +27,12 @@ export const globalReducer = (state = initialState, action) => {
         categories: action.payload,
       };
       return categories;
-
+    case SET_CATEGORIES_FETCH_STATE:
+      const cstate = {
+        ...state,
+        cfetchstate: action.payload,
+      };
+      return cstate;
     default:
       return state;
   }
