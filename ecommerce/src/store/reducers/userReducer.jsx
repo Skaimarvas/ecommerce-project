@@ -1,6 +1,7 @@
 import { toast } from "react-toastify";
 import { FETCH_STATES } from "../actions/globalActions";
 import {
+  GET_USER_ADDRESS,
   LOGOUT_USER,
   POST_LOGIN_DATA_TO_API,
   POST_SIGNUP_DATA_TO_API,
@@ -52,6 +53,12 @@ export const userReducer = (state = initialState, action) => {
         user: action.payload,
       };
       return verifyUser;
+    case GET_USER_ADDRESS:
+      const getUserAdress = {
+        ...state,
+        address: action.payload,
+      };
+      return getUserAdress;
     default:
       return state;
   }
