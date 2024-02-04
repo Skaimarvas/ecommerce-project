@@ -1,4 +1,9 @@
-import { getRolesFromApi } from "../actions/globalActions";
+import {
+  getRolesFromApi,
+  FETCH_STATES,
+  getCategoriesFromApi,
+  setCategoriesFetchState,
+} from "../actions/globalActions";
 import { axiosInstance } from "../../api/api";
 
 export const getRoles = () => {
@@ -10,4 +15,18 @@ export const getRoles = () => {
   };
 };
 
-export const getCategories = () => {};
+export const getCategories = () => {
+  return (dispatch, getState) => {
+    dispatch(setCategoriesFetchState(FETCH_STATES.fetching));
+    axiosInstance
+      .get("/categories")
+      .then((res) => {
+        dispatch(setCategoriesFetchState(FETCH_STATES.fetched));
+        dispatch(getCategoriesFromApi(res.data));
+      })
+      .catch((err) => {
+        dispatch(setCategoriesFetchState(FETCH_STATES.failed));
+        toast.error(err.message);
+      });
+  };
+};
