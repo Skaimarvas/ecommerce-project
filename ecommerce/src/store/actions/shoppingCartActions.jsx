@@ -1,5 +1,6 @@
 export const CLEAR_CART = "CLEAR_CART";
 export const GET_ADDRESS = "GET_ADDRESS";
+export const POST_ORDERS = "POST_ORDERS";
 
 export const clearCart = () => {
   return {
@@ -9,6 +10,12 @@ export const clearCart = () => {
 export const getAddressData = (adress) => {
   return {
     type: GET_ADDRESS,
+    payload: adress,
+  };
+};
+export const postAddressData = (adress) => {
+  return {
+    type: POST_ADDRESS,
     payload: adress,
   };
 };
