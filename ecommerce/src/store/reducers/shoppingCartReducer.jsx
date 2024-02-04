@@ -30,21 +30,14 @@ export const shoppingCartReducer = (state = initialState, action) => {
       }
       break;
     case DELETE_PRODUCT_FROM_CART:
-      const decreasedProduct = state.cart.findIndex(
-        (item) => item.product.id === action.payload
+      const deletedProduct = state.cart.filter(
+        (item) => item.product.id !== action.payload
       );
 
-      if (decreasedProduct !== -1) {
-        const updatedCart = [...state.cart];
-        if (updatedCart[decreasedProduct].count > 1) {
-          updatedCart[decreasedProduct].count -= 1;
-        }
-        return {
-          ...state,
-          cart: updatedCart,
-        };
-      }
-      break;
+      return {
+        ...state,
+        cart: [...deletedProduct],
+      };
     default:
       return state;
   }
