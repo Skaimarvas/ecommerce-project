@@ -1,6 +1,7 @@
 import {
   ADD_PRODUCT_TO_CART,
   CHECKED_PRODUCT,
+  CLEAR_CART,
   DECREASE_PRODUCT_FROM_CART,
   DELETE_PRODUCT_FROM_CART,
   GET_ADDRESS,
@@ -125,6 +126,12 @@ export const shoppingCartReducer = (state = initialState, action) => {
         orders: action.payload,
       };
       return getorders;
+    case CLEAR_CART:
+      const clearCart = {
+        ...state,
+        cart: [],
+      };
+      return clearCart;
     default:
       return state;
   }
