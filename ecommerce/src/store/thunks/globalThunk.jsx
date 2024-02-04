@@ -6,7 +6,7 @@ export const getRoles = () => {
     axiosInstance
       .get("/roles")
       .then((res) => dispath(getRolesFromApi(res.data)))
-      .catch((err) => console.log(err.message));
+      .catch((err) => toast.error(err.message));
   };
 };
 
