@@ -3,6 +3,7 @@ import {
   GET_BESTS_FROM_API,
   GET_PRODUCT_FROM_API,
   GET_TOTAL_PRODUCTS_COUNT,
+  GET_PRODUCT_DETAIL,
 } from "../actions/productActions";
 
 const initalState = {
@@ -37,6 +38,12 @@ export const productReducer = (state = initalState, action) => {
         productcount: action.payload,
       };
       return total;
+    case GET_PRODUCT_DETAIL:
+      const detail = {
+        ...state,
+        pdetail: { ...action.payload },
+      };
+      return detail;
     default:
       return state;
   }
