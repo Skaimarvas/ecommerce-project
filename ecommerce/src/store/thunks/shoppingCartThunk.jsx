@@ -5,6 +5,7 @@ import {
   getAddressData,
   postAddressData,
   getPaymentData,
+  postPaymentData,
 } from "../actions/shoppingCartActions";
 
 export const postOrders = (orders) => {
@@ -47,5 +48,13 @@ export const getPayment = () => {
       .get("/user/card")
       .then((res) => dispatch(getPaymentData(res.data)))
       .catch((err) => console.log("PAYMENT ERROR"));
+  };
+};
+export const postPayment = (payment) => {
+  return (dispatch, getState) => {
+    axiosInstance
+      .post("/user/card", payment)
+      .then((res) => dispatch(postPaymentData(res.data["0"])))
+      .catch((err) => console.log("POST PAYMENT ERROR"));
   };
 };
