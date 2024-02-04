@@ -6,6 +6,11 @@ import {
   applyMiddleware,
 } from "redux";
 
-const reducers = combineReducers({});
+//Reducers
+import { globalReducer } from "./reducers/globalReducer";
+
+const reducers = combineReducers({
+  global: globalReducer,
+});
 
 export const store = createStore(reducers, applyMiddleware(logger, thunk));
