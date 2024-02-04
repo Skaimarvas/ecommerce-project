@@ -4,6 +4,7 @@ import {
   GET_PRODUCT_FROM_API,
   GET_TOTAL_PRODUCTS_COUNT,
   GET_PRODUCT_DETAIL,
+  SET_DETAIL_STATE,
 } from "../actions/productActions";
 
 const initalState = {
@@ -44,6 +45,12 @@ export const productReducer = (state = initalState, action) => {
         pdetail: { ...action.payload },
       };
       return detail;
+    case SET_DETAIL_STATE:
+      const fetchdetail = {
+        ...state,
+        detailstate: action.payload,
+      };
+      return fetchdetail;
     default:
       return state;
   }
