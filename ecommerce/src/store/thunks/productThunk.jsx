@@ -4,6 +4,8 @@ import { FETCH_STATES } from "../actions/globalActions";
 import {
   setProductFetchState,
   setBproductFetchState,
+  setDetailState,
+  getProductDetail,
   getProductFromApi,
   getBestsFromApi,
   getTotalProductsCount,
@@ -40,5 +42,18 @@ export const getBproduct = (param) => {
       });
   };
 };
-
-export const getDetail = (param) => {};
+export const getDetail = (param) => {
+  return (dispatch, getState) => {
+    dispatch(setDetailState(FETCH_STATES.fetching));
+    axiosInstance
+      .get(`products${param ? param : ""}`)
+      .then((res) => {
+        dispatch(getProductDetail(res.data));
+        dispatch(setDetailState(FETCH_STATES.fetched));
+      })
+      .catch((err) => {
+        toast.error(err.message);
+        dispatch(setDetailState(FETCH_STATES.failed));
+      });
+  };
+};
