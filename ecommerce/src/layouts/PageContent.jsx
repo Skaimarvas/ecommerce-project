@@ -7,11 +7,15 @@ import ProductList from "../pages/ProductList";
 import Product from "../pages/Product";
 import SignUp from "../pages/SignUp";
 import Login from "../pages/Login";
+import ShoppingCartPage from "../pages/ShoppingCartPage";
 
 export default function PageContent() {
   return (
     <div>
       <Switch>
+        <Route path="/cart" exact>
+          <ShoppingCartPage />
+        </Route>
         <Route path="/login" exact>
           <Login />
         </Route>
