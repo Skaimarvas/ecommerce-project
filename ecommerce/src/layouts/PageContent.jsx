@@ -5,11 +5,15 @@ import Home from "../pages/Home";
 import NotFoundPage from "../pages/NotFoundPage";
 import ProductList from "../pages/ProductList";
 import Product from "../pages/Product";
+import SignUp from "../pages/SignUp";
 
 export default function PageContent() {
   return (
     <div>
       <Switch>
+        <Route path="/signup" exact>
+          <SignUp />
+        </Route>
         <Route path="/shopping/:cat/:id/:name" exact>
           <Product />
         </Route>
