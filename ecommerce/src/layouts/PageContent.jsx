@@ -13,6 +13,7 @@ import PrivateRoute from "../layouts/PrivateRoute";
 import OrdersPage from "../pages/OrdersPage";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
+import Team from "../pages/Team";
 
 export default function PageContent() {
   return (
