@@ -10,6 +10,7 @@ import { FaRegHeart } from "react-icons/fa";
 //Hooks
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+
 //Actions
 //Components
 import NavbarMenu from "./NavbarMenu";
@@ -17,7 +18,7 @@ import ShoppingCart from "./ShoppingCart";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 
 export default function NavbarLight(props) {
-  const location = useLocation();
+  const location = useLocation;
   const { setConfirm } = props;
   const [showCart, setShowCart] = useState(false);
   const dispatch = useDispatch();
@@ -28,7 +29,6 @@ export default function NavbarLight(props) {
   const confirmHandler = () => {
     setConfirm(true);
   };
-  console.log("LOCATION", location.pathname);
 
   useEffect(() => {
     setShowCart(false);
