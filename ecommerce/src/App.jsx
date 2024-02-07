@@ -7,10 +7,10 @@ import "./App.css";
 import Header from "./layouts/Header";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [confirm, setConfirm] = useState(false);
   return (
     <>
-      <Header />
+      <Header setConfirm={setConfirm} />
       <ToastContainer />
     </>
   );
