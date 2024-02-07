@@ -6,11 +6,15 @@ import NotFoundPage from "../pages/NotFoundPage";
 import ProductList from "../pages/ProductList";
 import Product from "../pages/Product";
 import SignUp from "../pages/SignUp";
+import Login from "../pages/Login";
 
 export default function PageContent() {
   return (
     <div>
       <Switch>
+        <Route path="/login" exact>
+          <Login />
+        </Route>
         <Route path="/signup" exact>
           <SignUp />
         </Route>
