@@ -8,11 +8,14 @@ import Product from "../pages/Product";
 import SignUp from "../pages/SignUp";
 import Login from "../pages/Login";
 import ShoppingCartPage from "../pages/ShoppingCartPage";
+import PaymentOptions from "../components/PaymentOptions";
+import PrivateRoute from "../layouts/PrivateRoute";
 
 export default function PageContent() {
   return (
     <div>
       <Switch>
+        <PrivateRoute path="/payment" component={() => <PaymentOptions />} />
         <Route path="/cart" exact>
           <ShoppingCartPage />
         </Route>
