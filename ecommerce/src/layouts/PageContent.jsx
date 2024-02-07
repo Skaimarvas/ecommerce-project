@@ -40,6 +40,9 @@ export default function PageContent() {
         <Route path="/shopping/:gen/:cat" exact>
           <ProductList />
         </Route>
+        <Route path="/team" exact>
+          <Team />
+        </Route>
         <Route path="/contact" exact>
           <Contact />
         </Route>
