@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import Input from "../components/Input";
 import { Link, useLocation } from "react-router-dom/cjs/react-router-dom.min";
 
-export default function OrderSummoryBox(props) {
+export default function OrderSummaryBox(props) {
   const location = useLocation();
   const { ordersHandler, option } = props;
   const [discount, setDiscount] = useState();
