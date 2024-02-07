@@ -9,9 +9,6 @@ export default function PageContent() {
   return (
     <div>
       <Switch>
-        <Route path="/shopping/:cat/:id/:name" exact>
-          <Product />
-        </Route>
         <Route path="/shopping" exact>
           <ProductList />
         </Route>
