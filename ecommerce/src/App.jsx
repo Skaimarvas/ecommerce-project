@@ -4,6 +4,8 @@ import { ToastContainer } from "react-toastify";
 //Css
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
+//Layouts
+import PageContent from "./layouts/PageContent";
 
 //Components
 import Header from "./layouts/Header";
@@ -16,6 +18,7 @@ function App() {
   return (
     <>
       <Header setConfirm={setConfirm} />
+      <PageContent />
       <Footer />
       <ToastContainer />
       <ScrollToUpButton />
