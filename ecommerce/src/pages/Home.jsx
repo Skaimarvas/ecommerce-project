@@ -5,6 +5,7 @@ import EditorPick from "../components/EditorPick";
 import BestsellerProduct from "../components/BestsellerProduct";
 import CarouselMid from "../components/CarouselMid";
 import ContainerFluid from "../components/ContainerFluid";
+import Blog from "../components/Blog";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <BestsellerProduct />
       <CarouselMid />
       <ContainerFluid />
+      <Blog />
     </>
   );
 }
