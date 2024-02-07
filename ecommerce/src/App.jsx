@@ -9,6 +9,7 @@ import "./App.css";
 import Header from "./layouts/Header";
 import Footer from "./layouts/Footer";
 import ScrollToUpButton from "./components/ScrollToUpButton";
+import Confirm from "./components/Confirm";
 
 function App() {
   const [confirm, setConfirm] = useState(false);
@@ -18,6 +19,7 @@ function App() {
       <Footer />
       <ToastContainer />
       <ScrollToUpButton />
+      {confirm && <Confirm confirm={confirm} setConfirm={setConfirm} />}
     </>
   );
 }
