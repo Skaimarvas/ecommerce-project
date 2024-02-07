@@ -12,6 +12,7 @@ import PaymentOptions from "../components/PaymentOptions";
 import PrivateRoute from "../layouts/PrivateRoute";
 import OrdersPage from "../pages/OrdersPage";
 import About from "../pages/About";
+import Contact from "../pages/Contact";
 
 export default function PageContent() {
   return (
@@ -38,6 +39,9 @@ export default function PageContent() {
         </Route>
         <Route path="/shopping/:gen/:cat" exact>
           <ProductList />
+        </Route>
+        <Route path="/contact" exact>
+          <Contact />
         </Route>
         <Route path="/about" exact>
           <About />
