@@ -35,7 +35,7 @@ export default function NavbarLight(props) {
   }, [location.pathname]);
 
   return (
-    <div className="flex flex-wrap  justify-between  md:justify-center items-center sm:flex-col tracking-wider px-[10px] ">
+    <div className="flex flex-row  justify-between  md:justify-center items-center sm:flex-col tracking-wider px-[10px] ">
       <div className="sm:w-full sm:flex justify-around items-center">
         <div className="flex py-[13px] pr-[79px]  ">
           <span className="text-2xl text-center text-[#252B42] font-bold ">
