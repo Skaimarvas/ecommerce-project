@@ -18,7 +18,7 @@ export default function NavbarMenu(props) {
 
   return (
     <nav>
-      <ul className="flex flex-wrap sm:flex-col text-[18px] sm:text-[30px] font-bold sm:font-normal text-[#737373] leading-6 sm:leading-[45px] justify-center items-center gap-[30px]  sm:py-[30px]">
+      <ul className="flex flex-wrap sm:flex-col text-[18px] sm:text-[30px] font-bold sm:font-normal text-[#737373] leading-6 sm:leading-[45px] justify-center items-center gap-[30px]  sm:py-[30px] xl:hidden">
         <NavbarMenuItem path="/" name="Home" className=" border-black" />
         <NavbarMenuItem
           path="/shopping"
